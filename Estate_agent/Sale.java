@@ -54,6 +54,10 @@ import java.time.LocalDate;
         this.houseNumber = houseNumber;
     }
 
+     /**
+      * sets the month sold (prevents invalid or future months from being set as month sold)
+      * @param monthSold - the month of the sale
+      */
     public void setMonthSold(int monthSold) {
         if (1 > monthSold || monthSold > 12) { //prevents an invalid month from being input
             throw new IllegalArgumentException("The monthSold must be an integer value 1-12");
@@ -67,6 +71,10 @@ import java.time.LocalDate;
         }
     }
 
+     /**
+      * sets the postcode (only allows postcodes 6-8 characters long)
+      * @param postcode - the postcode of the property
+      */
     public void setPostcode(String postcode) {
         if (5 < postcode.length() && postcode.length() < 9) { //ensures the postcode has between 6 and 8 characters
             this.postcode = postcode;
@@ -81,6 +89,10 @@ import java.time.LocalDate;
         this.value = value;
     }
 
+     /**
+      * sets the year sold (prevents the year sold from being in the future)
+       * @param yearSold - the year of the sale
+      */
     public void setYearSold(int yearSold) {
         if (yearSold > this.currentDate.getYear()){ //ensures the sold year is not in the future
             throw new IllegalArgumentException("The value of yearSold cannot be in the future");
