@@ -1,13 +1,15 @@
+ package Estate_agent;
+
 import java.time.LocalDate;
 
-public class Sales {
+public class Sale {
     private int houseNumber;
     private String postcode;
     private int value;
     private int monthSold;
     private int yearSold;
     final public LocalDate currentDate = LocalDate.now();
-    public Sales(int houseNumber, String postcode, int value, int monthSold, int yearSold){
+    public Sale(int houseNumber, String postcode, int value, int monthSold, int yearSold){
         setHouseNumber(houseNumber);
         setPostcode(postcode);
         setValue(value);
@@ -75,4 +77,8 @@ public class Sales {
         }
     }
 
+    public String toString(){
+        return "House Number: " + getHouseNumber() + " Postcode: " + getPostcode() + " Value: "
+                + getValue() + " Month Sold: " + getMonthSold() + " Year Sold: " + getYearSold();
+    }
 }
