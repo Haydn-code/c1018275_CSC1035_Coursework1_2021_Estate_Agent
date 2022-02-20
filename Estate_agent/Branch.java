@@ -23,13 +23,17 @@ public class Branch {
         this.branchName = branchName;
     }
 
-    public Sale maxSale(){
+    public void checkSalesList(){
         if (getListOfSales().size() == 0){ /*Causes the program to crash if this method is ran while listOfSales is
             empty*/
             throw new RuntimeException("At this moment in time there are no Sales in this branch");
         }
+    }
+
+    public Sale maxSale(){
+        checkSalesList();
         Sale maxSale = null;
-        for (Sale s : getListOfSales());{ /*iterates through the list of sales until the end where the sale of maximum
+        for(Sale s : getListOfSales()){ /*iterates through the list of sales until the end where the sale of maximum
         values will be assigned to maxSale and returned*/
             if (maxSale == null){
                 maxSale = s;
@@ -41,8 +45,25 @@ public class Branch {
         return maxSale;
     }
 
-    public Sale avgSale(){
+    public double avgSale(){
+        checkSalesList();
+        double totalSale = 0;
+        for(Sale s : getListOfSales()){
+            totalSale += s.getValue();
+        }
+        return totalSale/getListOfSales().size();
 
+    }
+
+    public ArrayList<Sale> greaterSales(int Value){
+        checkSalesList();
+        ArrayList<Sale> l = new ArrayList<>();
+        for(Sale s : getListOfSales()){
+            if(s.getValue() > Value){
+                l.add(s);
+            }
+        }
+        return l;
     }
 }
 
