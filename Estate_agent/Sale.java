@@ -103,7 +103,7 @@ import java.time.LocalDate;
     }
 
      /**
-      * returns the object in a more human readable form
+      * returns the object in a more human-readable form
       * @return - a string representation of the object
       */
     @Override
