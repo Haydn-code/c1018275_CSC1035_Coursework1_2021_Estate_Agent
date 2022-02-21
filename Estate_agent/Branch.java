@@ -40,7 +40,7 @@ public class Branch {
      * Checks that the list of sales is not empty
      */
     public void checkSalesList(){
-        if (getListOfSales().size() == 0){ /*Causes the program to crash if this method is ran while listOfSales is
+        if (getListOfSales().size() == 0){ /*Causes the program to crash if this method is run while listOfSales is
             empty*/
             throw new RuntimeException("At this moment in time there are no Sales in this branch");
         }
