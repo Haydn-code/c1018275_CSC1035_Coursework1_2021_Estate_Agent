@@ -37,7 +37,7 @@ public class Branch {
     }
 
     /**
-     * Checks that the list of sales is empty
+     * Checks that the list of sales is not empty
      */
     public void checkSalesList(){
         if (getListOfSales().size() == 0){ /*Causes the program to crash if this method is ran while listOfSales is
