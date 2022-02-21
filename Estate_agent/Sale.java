@@ -104,7 +104,7 @@ import java.time.LocalDate;
 
      /**
       * returns the object in a more human-readable form
-      * @return - a string representation of the object
+      * @return - type String - a string representation of the object
       */
     @Override
     public String toString(){
