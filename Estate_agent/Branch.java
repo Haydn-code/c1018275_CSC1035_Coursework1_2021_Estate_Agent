@@ -48,7 +48,7 @@ public class Branch {
 
     /**
      * Method that returns the sale of maximum value made by the branch
-     * @return - type Sale - the sale of max value
+     * @return - Type Sale - the sale of max value
      */
     public Sale maxSale(){
         checkSalesList();
@@ -67,7 +67,7 @@ public class Branch {
 
     /**
      * Method that returns the avg value of sales made by the branch
-     * @return - type double - the average value of a sale made by a branch
+     * @return - Type double - the average value of a sale made by a branch
      */
     public double avgSale(){
         checkSalesList();
@@ -82,7 +82,7 @@ public class Branch {
     /**
      * Method that returns a list of sales over a given value
      * @param Value - the value you are checking for sales that are over
-     * @return -type ArrayList<Sale> - returns a list of sales that are over the specified value
+     * @return - Type ArrayList<Sale> - returns a list of sales that are over the specified value
      */
     public ArrayList<Sale> greaterSales(int Value){
         checkSalesList();
