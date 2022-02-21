@@ -1,5 +1,5 @@
 package Estate_agent;
-import java.util.List;
+
 import java.util.ArrayList;
 
 /**
@@ -20,7 +20,7 @@ public class Branch {
         setListOfSales(listOfSales);
     }
 
-    public List<Sale> getListOfSales() {
+    public ArrayList<Sale> getListOfSales() {
         return listOfSales;
     }
 
