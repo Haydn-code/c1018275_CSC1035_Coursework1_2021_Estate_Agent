@@ -26,8 +26,8 @@ import java.time.LocalDate;
         setHouseNumber(houseNumber);
         setPostcode(postcode);
         setValue(value);
-        setMonthSold(monthSold);
         setYearSold(yearSold);
+        setMonthSold(monthSold);
     }
 
     public int getHouseNumber() {
