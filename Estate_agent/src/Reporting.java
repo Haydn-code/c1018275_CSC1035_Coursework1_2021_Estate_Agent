@@ -70,7 +70,7 @@ public class Reporting {
      * This method returns the list of sales over a given value from all the sales in the branches listed in
      * listOfBranches
      * @param value - the value you are checking that the sales are over
-     * @return - Type ArrayList<Sale> - returns the list of sales that are over the specified value
+     * @return - Type ArrayList[Sale] - returns the list of sales that are over the specified value
      */
     public ArrayList<Sale> greaterBranchSales(int value){
         checkBranchesList();
