@@ -3,6 +3,10 @@ package Estate_agent;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * The ReportingIO class is designed to provide an interface that allows the user to interact with the rest of the
+ * class, allowing them to both input data and retrieve data.
+ */
 public class ReportingIO {
 
     final private static Reporting r = new Reporting();
@@ -20,7 +24,10 @@ public class ReportingIO {
        getIO().menu();
     }
 
-
+    /**
+     * The menu method is designed to create an interactive menu that allows the user to select what they want to do,
+     * it will loop at the end of each task until the user decides to select the exit option.
+     */
     public void menu(){
         Scanner sc = new Scanner(System.in);
         boolean loop = true;
@@ -52,6 +59,10 @@ public class ReportingIO {
         }
     }
 
+    /**
+     * The enterBranchData method allows the user to add a branch object to the Reporting class and gives the option to
+     * add sales to that branch
+     */
     public void enterBranchData() {
         Scanner sc = new Scanner(System.in);
         boolean loop = true;
@@ -88,6 +99,11 @@ public class ReportingIO {
         }
     }
 
+    /**
+     * Enter sale data allows the user to enter sale data about a specific sale and link it to a branch
+     * @param branchName - Type String - the name of the branch that the user wants to access (will be empty and asked
+     *                   for later unless supplied by a function call from the enterBranchData method)
+     */
     public void enterSaleData(String branchName) {
         Scanner sc = new Scanner(System.in);
         if (Objects.equals(branchName, "")) { /* if called from the main menu asks the user to define which branch
@@ -97,7 +113,7 @@ public class ReportingIO {
         }
         boolean loop = true;
         Branch branch = null;
-        while (loop) {
+        while (loop) { // checks that the branch that has been named exists in the Reporting object
             for (Branch b : getR().getListOfBranches()) {
                 if (Objects.equals(branchName, b.getBranchName())) {
                     branch = b;
@@ -115,6 +131,7 @@ public class ReportingIO {
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the house number of the sale(must be an integer)");
             houseNumber = sc.nextInt();
+            sc.nextLine();
         }
         System.out.println("Please enter the postcode of the house of the sale(must be between 6-8 characters");
         String postcode = sc.nextLine();
@@ -123,32 +140,53 @@ public class ReportingIO {
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the value that the house was sold at(must be an integer");
             value = sc.nextInt();
+            sc.nextLine();
         }
         sc.nextLine();
         int yearSold = 0;
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the year the house was sold(must be an integer)");
             yearSold = sc.nextInt();
+            sc.nextLine();
         }
         sc.nextLine();
         int monthSold = 0;
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the month the house was sold(must be an integer 1-12");
             monthSold = sc.nextInt();
+            sc.nextLine();
         }
         branch.addToListOfSales(new Sale(houseNumber, postcode, value, monthSold, yearSold));
     }
 
+    /**
+     * Finds the branch with the highest average sale and outputs it to the user
+     */
     public void highestAvg(){
-        System.out.println("3");
+        System.out.println(getR().highestAvg()); /* implements the existing method in Reporting class in order to find
+        the branch with the highest average and outputs it to the user */
     }
 
+    /**
+     * Finds the highest sale and outputs it to the user
+     */
     public void highestSale(){
-        System.out.println("4");
+        System.out.println(getR().highestSale()); /* implements the existing method in Reporting class in order to find
+        the highest sale across all branches */
     }
 
+    /**
+     * Outputs to the console the list of Sales greater than a user specified value
+     */
     public void salesGreaterThan(){
-        System.out.println("5");
+        Scanner sc = new Scanner(System.in);
+        int value = 0;
+        while (!sc.hasNextInt()){ // Repeats until the user gives a valid input for value
+            System.out.println("Please enter the value you wish to see sales greater than(must be an integer");
+            value = sc.nextInt();
+            sc.nextLine();
+        }
+        System.out.println(getR().greaterBranchSales(value));
     }
 
 }
