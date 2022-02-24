@@ -96,5 +96,20 @@ public class Branch {
         }
         return greaterSales;
     }
+
+    /**
+     * Added a toString method which will allow a human-readable form of the branch class to be output to the console
+     * @return - Type String - a string format of the branch object
+     */
+    public String toString(){
+        StringBuilder salesList = new StringBuilder();
+        for (Sale s : getListOfSales()){ /* iterates through all the sales in the list to create a string of the list of
+             sales */
+            salesList.append(s.toString()).append(" ");
+        }
+        return "Name: " + getBranchName() + " Avg Sale: " + avgSale() + " Max Sale: " + maxSale() + " list of sales: "
+        + salesList;
+
+    }
 }
 
