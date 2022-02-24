@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Branch {
     private String branchName;
-    private ArrayList<Sale> listOfSales;
+    private ArrayList<Sale> listOfSales = new listOfSales;
 
     /**
      * This is a constructor method which links the parameters to the fields of the class
