@@ -1,5 +1,3 @@
- package Estate_agent;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;

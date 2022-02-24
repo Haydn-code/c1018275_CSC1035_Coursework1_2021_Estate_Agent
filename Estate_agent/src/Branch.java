@@ -1,5 +1,3 @@
-package Estate_agent;
-
 import java.util.ArrayList;
 
 /**

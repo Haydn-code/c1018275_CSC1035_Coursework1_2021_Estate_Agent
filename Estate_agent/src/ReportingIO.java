@@ -1,5 +1,3 @@
-package Estate_agent;
-
 import java.util.Objects;
 import java.util.Scanner;
 
