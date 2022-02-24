@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Defines a Reporting class which allows the program to manage multiple branches at once and perform operations on them
+ */
 public class Reporting {
     private ArrayList<Branch> listOfBranches = new ArrayList<>();
 
