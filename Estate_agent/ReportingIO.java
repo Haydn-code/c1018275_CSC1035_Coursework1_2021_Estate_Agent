@@ -76,8 +76,9 @@ public class ReportingIO {
                 if (Objects.equals(branchName, b.getBranchName())) {
                     loop = true;
                     break;
-                }
+                    }
             }
+
         }
         getR().addToListOfBranches(new Branch(branchName)); /* creates a new instance from the branch class and adds it
         to the list of branches in the object R of the reporting class */
@@ -106,6 +107,7 @@ public class ReportingIO {
      */
     public void enterSaleData(String branchName) {
         Scanner sc = new Scanner(System.in);
+        System.out.println(branchName);
         if (Objects.equals(branchName, "")) { /* if called from the main menu asks the user to define which branch
         they wish to add the sale to */
             System.out.println("Please enter the name of the branch you wish to add a sale to");
@@ -113,7 +115,7 @@ public class ReportingIO {
         }
         boolean loop = true;
         Branch branch = null;
-        while (loop) { // checks that the branch that has been named exists in the Reporting object
+        while (true) { // checks that the branch that has been named exists in the Reporting object
             for (Branch b : getR().getListOfBranches()) {
                 if (Objects.equals(branchName, b.getBranchName())) {
                     branch = b;
@@ -121,41 +123,42 @@ public class ReportingIO {
                     break;
                 }
             }
+            if (!loop){
+                break;
+            }
             System.out.println("This branch is not in our list, please enter another branch name");
             branchName = sc.nextLine();
         }
-        sc.nextLine(); /* if the branch name is a number this prevents the house number from being entered as the same
-        integer */
         // takes all the sale data as inputs with some simple checks for invalid inputs
-        int houseNumber = 0;
+        System.out.println("Please enter the house number of the sale(must be an integer)");
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the house number of the sale(must be an integer)");
-            houseNumber = sc.nextInt();
             sc.nextLine();
         }
-        System.out.println("Please enter the postcode of the house of the sale(must be between 6-8 characters");
-        String postcode = sc.nextLine();
-        sc.nextLine();
-        int value = 0;
+        int houseNumber = sc.nextInt();
+        System.out.println("Please enter the value that the house was sold at(must be an integer, assume pounds" +
+                "as the measurement)");
         while (!sc.hasNextInt()) {
-            System.out.println("Please enter the value that the house was sold at(must be an integer");
-            value = sc.nextInt();
+            System.out.println("Please enter the value that the house was sold at(must be an integer, assume pounds " +
+                    "as the measurement)");
             sc.nextLine();
         }
-        sc.nextLine();
-        int yearSold = 0;
+        int value = sc.nextInt();
+        System.out.println("Please enter the year the house was sold(must be an integer)");
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the year the house was sold(must be an integer)");
-            yearSold = sc.nextInt();
             sc.nextLine();
         }
-        sc.nextLine();
-        int monthSold = 0;
+        int yearSold = sc.nextInt();
+        System.out.println("Please enter the month the house was sold(must be an integer 1-12");
         while (!sc.hasNextInt()) {
             System.out.println("Please enter the month the house was sold(must be an integer 1-12");
-            monthSold = sc.nextInt();
             sc.nextLine();
         }
+        int monthSold = sc.nextInt();
+        System.out.println("Please enter the postcode of the house of the sale(must be between 6-8 characters)");
+        sc.nextLine();
+        String postcode = sc.nextLine();
         branch.addToListOfSales(new Sale(houseNumber, postcode, value, monthSold, yearSold));
     }
 
@@ -180,12 +183,12 @@ public class ReportingIO {
      */
     public void salesGreaterThan(){
         Scanner sc = new Scanner(System.in);
-        int value = 0;
+        System.out.println("Please enter the value you wish to see sales greater than(must be an integer");
         while (!sc.hasNextInt()){ // Repeats until the user gives a valid input for value
             System.out.println("Please enter the value you wish to see sales greater than(must be an integer");
-            value = sc.nextInt();
             sc.nextLine();
         }
+        int value = sc.nextInt();
         System.out.println(getR().greaterBranchSales(value));
     }
 
