@@ -5,20 +5,16 @@ import java.util.ArrayList;
 public class Reporting {
     private ArrayList<Branch> listOfBranches;
 
-    /**
-     * This is a constructor method which links the parameters to the fields
-     * @param listOfBranches - the list of Branches
-     */
-    public Reporting(ArrayList<Branch> listOfBranches){
-        setListOfBranches(listOfBranches);
-    }
-
     public ArrayList<Branch> getListOfBranches() {
         return listOfBranches;
     }
 
-    public void setListOfBranches(ArrayList<Branch> listOfBranches) {
-        this.listOfBranches = listOfBranches;
+    /**
+     * adds a branch to theListOfBranches
+     * @param b - Type Branch - the branch to be added
+     */
+    public void addToListOfBranches(Branch b) {
+        this.listOfBranches.add(b);
     }
 
     /**
