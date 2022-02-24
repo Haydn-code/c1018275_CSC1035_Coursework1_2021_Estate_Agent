@@ -110,7 +110,7 @@ import java.time.LocalDate;
       */
     @Override
     public String toString(){
-        return "House Number: " + getHouseNumber() + " Postcode: " + getPostcode() + " Value: "
-                + getValue() + " Month Sold: " + getMonthSold() + " Year Sold: " + getYearSold();
+        return "(House Number: " + getHouseNumber() + " Postcode: " + getPostcode() + " Value: "
+                + getValue() + " Month Sold: " + getMonthSold() + " Year Sold: " + getYearSold() + ")";
     }
 }
