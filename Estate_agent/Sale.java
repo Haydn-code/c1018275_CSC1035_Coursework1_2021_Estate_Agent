@@ -77,7 +77,7 @@ import java.time.LocalDate;
       */
     public void setPostcode(String postcode) {
         if (5 < postcode.length() && postcode.length() < 9) { //ensures the postcode has between 6 and 8 characters
-            this.postcode = postcode;
+            this.postcode = postcode.toUpperCase();
         }
         else{
             throw new IllegalArgumentException("The postcode must be between six " +
