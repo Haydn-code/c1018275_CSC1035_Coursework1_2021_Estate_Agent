@@ -3,7 +3,7 @@ package Estate_agent;
 import java.util.ArrayList;
 
 public class Reporting {
-    private ArrayList<Branch> listOfBranches;
+    private ArrayList<Branch> listOfBranches = new ArrayList<>();
 
     public ArrayList<Branch> getListOfBranches() {
         return listOfBranches;
