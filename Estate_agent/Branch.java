@@ -14,7 +14,7 @@ public class Branch {
      * This is a constructor method which links the parameters to the fields of the class
      * @param branchName - the name of the branch
      */
-    public Branch(String branchName, ArrayList<Sale> listOfSales){
+    public Branch(String branchName){
         setBranchName(branchName);
     }
 
