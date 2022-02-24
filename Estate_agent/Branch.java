@@ -13,11 +13,9 @@ public class Branch {
     /**
      * This is a constructor method which links the parameters to the fields of the class
      * @param branchName - the name of the branch
-     * @param listOfSales - the list of sales made by the branch
      */
     public Branch(String branchName, ArrayList<Sale> listOfSales){
         setBranchName(branchName);
-        setListOfSales(listOfSales);
     }
 
     public ArrayList<Sale> getListOfSales() {
@@ -28,8 +26,12 @@ public class Branch {
         return branchName;
     }
 
-    public void setListOfSales(ArrayList<Sale> listOfSales) {
-        this.listOfSales = listOfSales;
+    /**
+     * Allows the user to add a sale to listOfSales
+     * @param s - Type Sale - the sale to be added
+     */
+    public void addToListOfSales(Sale s) {
+        this.listOfSales.add(s);
     }
 
     public void setBranchName(String branchName) {
