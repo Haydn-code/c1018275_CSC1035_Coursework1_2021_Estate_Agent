@@ -1,5 +1,7 @@
  package Estate_agent;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 
  /**
@@ -75,7 +77,7 @@ import java.time.LocalDate;
       * sets the postcode (only allows postcodes 6-8 characters long)
       * @param postcode - the postcode of the property
       */
-    public void setPostcode(String postcode) {
+    public void setPostcode(@NotNull String postcode) {
         if (5 < postcode.length() && postcode.length() < 9) { //ensures the postcode has between 6 and 8 characters
             this.postcode = postcode.toUpperCase();
         }
