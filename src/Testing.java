@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Objects;
 
 /**
@@ -11,20 +13,26 @@ public class Testing {
                 && test1.getMonthSold() == 4 && test1.getYearSold() == 2000) {
             System.out.println("test1 passed");
         }
+        else {
+            System.out.println("test1 failed");
+        }
         try {
             Sale test2 = new Sale(1, "123456789", 1300, 4, 1980);
+            System.out.println("test2 failed");
         } catch (IllegalArgumentException e) {
             System.out.println("test2 passed");
         }
         try {
             Sale test3 = new Sale(2, "123 456", 1400, 5, 2023);
-        } catch (IllegalArgumentException e) {
             System.out.println("test3 passed");
+        } catch (IllegalArgumentException e) {
+            System.out.println("test3 failed");
         }
         try {
             Sale test4 = new Sale(3, "WE6845", 1500, 12, 2022);
-        } catch (IllegalArgumentException e) {
             System.out.println("test4 passed");
+        } catch (IllegalArgumentException e) {
+            System.out.println("test4 failed");
         }
         Branch test5 = new Branch("Branch1");
         test5.addToListOfSales(new Sale(0, "TE34ST", 4000, 6, 2000));
@@ -34,9 +42,13 @@ public class Testing {
                 test5.greaterSales(7999).size() == 2 && test5.greaterSales(8000).size() == 1) {
             System.out.println("test5 passed");
         }
+        else {
+            System.out.println("test5 failed");
+        }
         Branch test6 = new Branch("Branch2");
         try{
             test6.maxSale();
+            System.out.println("test6 failed");
         }
         catch(RuntimeException e){
             System.out.println("test6 passed");
