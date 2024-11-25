@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Estate_agent" options="--add-modules java.base" />
-      <module name="c1018275_CSC1035_Coursework1_2021" options="--add-modules java.base --add-exports java.base/sun.util.calendar=ALL-UNNAMED" />
-    </option>
-  </component>
-</project>
